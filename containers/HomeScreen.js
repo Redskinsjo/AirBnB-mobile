@@ -89,14 +89,9 @@ const HomeScreen = () => {
             }
 
             return (
-              // <Pressable
-              //   onPress={() => {
-              //     console.log(item.item._id);
-              //   }}
-              // >
-              <TouchableHighlight
+              <Pressable
                 onPress={() => {
-                  console.log(1);
+                  console.log(item.item._id);
                 }}
               >
                 <View style={styles.appart}>
@@ -106,7 +101,7 @@ const HomeScreen = () => {
                     data={item.item.photos}
                     renderItem={(photo) => {
                       return (
-                        <TouchableOpacity
+                        <Pressable
                           onPress={() => {
                             console.log(2);
                           }}
@@ -116,7 +111,7 @@ const HomeScreen = () => {
                             source={{ uri: photo.item.url }}
                             resizeMode={'cover'}
                           ></ImageBackground>
-                        </TouchableOpacity>
+                        </Pressable>
                       );
                     }}
                     keyExtractor={(photo) => photo.picture_id}
@@ -163,7 +158,7 @@ const HomeScreen = () => {
                   </View>
                   <Text style={styles.price}>{item.item.price} €</Text>
                 </View>
-              </TouchableHighlight>
+              </Pressable>
             );
           }}
           keyExtractor={(item) => item._id}
